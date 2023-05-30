@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Habits</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Prompt:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
       <div class="start-view">
         <h1 class="title">Habits app</h1>
-        <button class="start-view__btn">Set New Habit</button>
-        <select class="start-view__select" type="week">
-          <option value="choose" selected disabled>Choose habit</option>
-        </select>
+        <div class="start-view__buttons">
+          <button class="start-view__buttons--set-btn">Set New Habit</button>
+          <select class="start-view__buttons--select" type="week">
+            <option value="choose" selected disabled>Choose habit</option>
+          </select>
+        </div>
       </div>
 
       <form class="setting-habit">
@@ -45,38 +55,38 @@
             </li>
             <li class="days__day">
               <span class="days__day--number">2</span>
-              <button class="days__day--status">&curren;</button>
               <p class="days__day--name">Tuesday</p>
+              <button class="days__day--status">&curren;</button>
             </li>
             <li class="days__day">
               <button class="days__day--status"></button>
               <span class="days__day--number">3</span>
-              <button class="days__day--status">&curren;</button>
               <p class="days__day--name">Wednesday</p>
+              <button class="days__day--status">&curren;</button>
             </li>
             <li class="days__day">
               <button class="days__day--status"></button>
               <span class="days__day--number">4</span>
-              <button class="days__day--status">&curren;</button>
               <p class="days__day--name">Thursday</p>
+              <button class="days__day--status">&curren;</button>
             </li>
             <li class="days__day">
               <button class="days__day--status"></button>
               <span class="days__day--number">5</span>
-              <button class="days__day--status">&curren;</button>
               <p class="days__day--name">Friday</p>
+              <button class="days__day--status">&curren;</button>
             </li>
             <li class="days__day">
               <button class="days__day--status"></button>
               <span class="days__day--number">6</span>
-              <button class="days__day--status">&curren;</button>
               <p class="days__day--name">Saturday</p>
+              <button class="days__day--status">&curren;</button>
             </li>
             <li class="days__day">
               <button class="days__day--status"></button>
               <span class="days__day--number">7</span>
-              <button class="days__day--status">&curren;</button>
               <p class="days__day--name">Sunday</p>
+              <button class="days__day--status">&curren;</button>
             </li>
           </ul>
         </div>
