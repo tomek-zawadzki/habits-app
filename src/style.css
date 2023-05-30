@@ -33,7 +33,7 @@ body {
 }
 
 .start-view {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -85,7 +85,54 @@ body {
 }
 
 .setting-habit {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3rem;
+  margin-top: 12rem;
+}
+
+.setting-habit__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.setting-habit__div label {
+  margin-bottom: 2rem;
+}
+
+.setting-habit__div--label-name {
+  font-size: 4rem;
+}
+
+.setting-habit__div--input {
+  width: 24rem;
+  border: 2px solid var(--text--color);
+  background-color: var(--background--color);
+  color: var(--text--color);
+  height: 4rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.setting-habit__add-btn {
+  font-size: 2.6rem;
+  color: var(--background--color);
+  padding: 0.8rem;
+  border: 2px solid var(--text--color);
+  border-radius: 1rem;
+  width: 24rem;
+  margin-top: 4rem;
+  transition: background-color 0.35s, color 0.35s, border 0.35s;
+}
+
+.setting-habit__add-btn:hover {
+  color: var(--text--color);
+  background-color: var(--background--color);
 }
 
 .week {
