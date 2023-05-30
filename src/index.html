@@ -5,11 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Habits</title>
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>test</h1>
-    <script src="./../app.js"></script>
+    <main>
+      <div class="start-view">
+        <h1 class="title">Habits app</h1>
+        <button class="start-view__btn">Set New Habit</button>
+        <select class="start-view__select" type="week">
+          <option value="choose" selected disabled>Choose habit</option>
+        </select>
+      </div>
+
+      <form class="setting-habit">
+        <label for="new-habit">Habit name</label>
+        <input type="text" name="new-habit" id="new-habit" />
+        <label for="start-date">
+          Set the date when you want to start build a new habit
+        </label>
+        <input type="week" name="start-date" id="start-date" />
+        <label for="end-date">
+          Set the date when you want to finish build a new habit
+        </label>
+        <input type="week" name="end-date" id="end-date" />
+        <button class="setting-habit__add-btn">Add habit</button>
+      </form>
+
+      <div class="week">
+        <h2 class="week__habit">Meditation</h2>
+        <div class="controllers">
+          <button class="controllers__prev-btn">&lt; Previous Week</button>
+          <span class="controllers__month">May</span>
+          <button class="next-btn">Next Week &gt;</button>
+        </div>
+        <div class="days">
+          <ul class="days__list">
+            <li class="days__day">
+              <span class="days__day--number">1</span>Monday
+            </li>
+            <li class="days__day">
+              <span class="days__day--number">2</span>
+              <button class="days__day--status">&curren;</button>
+              <p class="days__day--name">Tuesday</p>
+            </li>
+            <li class="days__day">
+              <button class="days__day--status"></button>
+              <span class="days__day--number">3</span>
+              <button class="days__day--status">&curren;</button>
+              <p class="days__day--name">Wednesday</p>
+            </li>
+            <li class="days__day">
+              <button class="days__day--status"></button>
+              <span class="days__day--number">4</span>
+              <button class="days__day--status">&curren;</button>
+              <p class="days__day--name">Thursday</p>
+            </li>
+            <li class="days__day">
+              <button class="days__day--status"></button>
+              <span class="days__day--number">5</span>
+              <button class="days__day--status">&curren;</button>
+              <p class="days__day--name">Friday</p>
+            </li>
+            <li class="days__day">
+              <button class="days__day--status"></button>
+              <span class="days__day--number">6</span>
+              <button class="days__day--status">&curren;</button>
+              <p class="days__day--name">Saturday</p>
+            </li>
+            <li class="days__day">
+              <button class="days__day--status"></button>
+              <span class="days__day--number">7</span>
+              <button class="days__day--status">&curren;</button>
+              <p class="days__day--name">Sunday</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script src="./../app.js"></script>
+    </main>
   </body>
 </html>
