@@ -32,6 +32,10 @@ body {
   font-family: "Prompt", sans-serif;
 }
 
+main {
+  width: 90%;
+}
+
 .start-view {
   display: none;
   flex-direction: column;
@@ -85,7 +89,7 @@ body {
 }
 
 .setting-habit {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -136,5 +140,74 @@ body {
 }
 
 .week {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.week__habit {
+  font-size: 4rem;
+  font-weight: 400;
+  border-bottom: 2px solid var(--text--color);
+  width: 100%;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.week__container {
+  margin-top: 3.6rem;
+  border: 1px solid var(--text--color);
+  font-size: 2rem;
+  width: 36rem;
+}
+
+.controllers {
+  display: flex;
+  justify-content: space-between;
+  background-color: #456460;
+  box-sizing: content-box;
+  padding: 2rem 1rem;
+  /* margin-bottom: 1.6rem; */
+}
+
+.controllers__month {
+  font-size: 2.8rem;
+}
+
+.controllers__prev-btn,
+.controllers__next-btn {
+  width: 9rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: transparent;
+  color: #fff9fb;
+}
+
+.controllers__next-btn {
+  text-align: end;
+}
+
+.days__day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  border: 1px solid var(--text--color);
+  list-style: none;
+}
+
+.days__day--number {
+  display: grid;
+  place-items: center;
+  background-color: #456460;
+  width: 3.4rem;
+  height: 100%;
+}
+
+.days__day--status {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100%;
+  border: none;
+  margin-right: 0.3rem;
 }
