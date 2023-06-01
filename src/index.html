@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Prompt:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/aee95fd16a.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -20,14 +24,17 @@
       <div class="start-view">
         <h1 class="title">Habits app</h1>
         <div class="start-view__buttons">
-          <button class="start-view__buttons--set-btn">Set New Habit</button>
-          <select class="start-view__buttons--select" type="week">
+          <button class="start-view__buttons--set-btn set-btn">
+            Set New Habit
+          </button>
+          <select class="start-view__buttons--select select-btn" type="week">
             <option value="choose" selected disabled>Choose habit</option>
           </select>
         </div>
       </div>
 
       <form class="setting-habit">
+        <button class="back-btn"></button>
         <div class="setting-habit__div">
           <label class="setting-habit__div--label-name" for="new-habit"
             >Habit title</label
@@ -37,6 +44,7 @@
             type="text"
             name="new-habit"
             id="new-habit"
+            placeholder="enter habit title"
           />
         </div>
         <div class="setting-habit__div">
@@ -57,6 +65,7 @@
             type="number"
             name="end-date"
             id="end-date"
+            value="0"
           />
         </div>
         <button class="setting-habit__add-btn">Add habit</button>
