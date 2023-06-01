@@ -1,27 +1,19 @@
 import { settingHabit } from "./src/settingHabit.js";
+import {
+  goToHabitView,
+  goToStartView,
+  goToSetHabit,
+} from "./src/appManipulation.js";
 
 const setHabitBtn = document.querySelector(".set-btn");
 const selectBtn = document.querySelector(".select-btn");
 const backBtns = document.querySelectorAll(".back-btn");
-const startView = document.querySelector(".start-view");
-const settingHabitView = document.querySelector(".setting-habit");
 const addBtn = document.querySelector(".add-btn");
-const habitView = document.querySelector(".week");
+// const habitContainer = document.querySelector();
 
-const goToSetHabit = () => {
-  startView.style.display = "none";
-  settingHabitView.style.display = "flex";
-};
-
-const goToStartView = (view) => {
-  view.style.display = "none";
-  startView.style.display = "flex";
-};
-
-const goToHabitView = () => {
-  settingHabitView.style.display = "none";
-  habitView.style.display = "flex";
-};
+export const habitView = document.querySelector(".week");
+export const settingHabitView = document.querySelector(".setting-habit");
+export const startView = document.querySelector(".start-view");
 
 backBtns.forEach((btn) => {
   if (btn.parentElement.classList.contains("setting-habit")) {
