@@ -39,7 +39,7 @@ main {
 }
 
 .start-view {
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 
@@ -93,7 +93,7 @@ main {
 }
 
 .setting-habit {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;

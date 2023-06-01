@@ -42,7 +42,7 @@
             >Habit title</label
           >
           <input
-            class="setting-habit__div--input"
+            class="setting-habit__div--input title-input"
             type="text"
             name="new-habit"
             id="new-habit"
@@ -54,7 +54,7 @@
             When do you want to start build a new habit
           </label>
           <input
-            class="setting-habit__div--input"
+            class="setting-habit__div--input date-input"
             type="date"
             name="start-date"
             id="start-date"
@@ -63,17 +63,20 @@
         <div class="setting-habit__div">
           <label for="end-date"> How many days do you want build habit </label>
           <input
-            class="setting-habit__div--input"
+            class="setting-habit__div--input days-amount-input"
             type="number"
             name="end-date"
             id="end-date"
             value="0"
           />
         </div>
-        <button class="setting-habit__add-btn">Add habit</button>
+        <button class="setting-habit__add-btn add-btn">Add habit</button>
       </div>
 
       <div class="week">
+        <button class="back-btn">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
         <h2 class="week__habit">Meditation</h2>
         <div class="week__container">
           <div class="controllers">
@@ -200,7 +203,7 @@
           </div>
         </div>
       </div>
-      <script src="./../app.js"></script>
+      <script src="./../app.js" type="module"></script>
     </main>
   </body>
 </html>
