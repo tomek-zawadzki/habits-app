@@ -1,5 +1,9 @@
 import { habitView } from "../app.js";
 
+const habitTitleInput = document.querySelector(".title-input");
+const habitStartDateInput = document.querySelector(".date-input");
+const habitDaysAmountInput = document.querySelector(".days-amount-input");
+
 const date = new Date();
 const currYear = date.getFullYear();
 const currMonth = date.getMonth();
@@ -32,27 +36,33 @@ const days = [
 
 export const renderHabitContainer = () => {
   const html = `
-            <h2 class="week__habit">Meditation</h2>
-            <div class="week__container">
-            <div class="controllers">
-                <div class="controllers__first-line">
-                    <button class="controllers__prev-btn">&lt; Previous</button>
-                    <span class="controllers__month">${months[currMonth]}</span>
-                    <button class="controllers__next-btn">Next &gt;</button>
+              <div class="week__header">
+                <h2 class="week__header--title">${habitTitleInput.value}</h2>
+                <div class="week__header--details">
+                <span>Start date: ${habitStartDateInput.value}</span>
+                <span>Number of days: ${habitDaysAmountInput.value}</span>
                 </div>
-                <span class="controllers__status">0/${lastDateofMonth}</span>
                 </div>
-                <div class="days">
-                <div class="days__info">
-                    <p class="days__info--element">day</p>
-                    <p class="days__info--element"></p>
-                    <p class="days__info--element">status</p>
-                </div>
-                <ul class="days__list">
-                   
-                </ul>
-                </div>
-            </div> 
+                <div class="week__container">
+                <div class="controllers">
+                    <div class="controllers__first-line">
+                        <button class="controllers__prev-btn">&lt; Previous</button>
+                        <span class="controllers__month">${months[currMonth]}</span>
+                        <button class="controllers__next-btn">Next &gt;</button>
+                    </div>
+                    <span class="controllers__status">0/${habitDaysAmountInput.value}</span>
+                    </div>
+                    <div class="days">
+                    <div class="days__info">
+                        <p class="days__info--element">day</p>
+                        <p class="days__info--element"></p>
+                        <p class="days__info--element">status</p>
+                    </div>
+                    <ul class="days__list">
+                      
+                    </ul>
+                    </div>
+               </div> 
       `;
   habitView.insertAdjacentHTML("afterbegin", html);
 };

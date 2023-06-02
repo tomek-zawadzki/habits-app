@@ -25,6 +25,4 @@ backBtns.forEach((btn) => {
 });
 
 setHabitBtn.addEventListener("click", goToSetHabit);
-// backBtn.addEventListener("click", () => goToStartView(settingHabitView));
-
 addBtn.addEventListener("click", goToHabitView);
