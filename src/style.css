@@ -292,9 +292,25 @@ main {
   background-color: white;
   margin-right: 0.3rem;
   cursor: pointer;
-  transition: background-color 0.35s;
+  transition: background-color 0.1s;
 }
 
-.days__day--status:hover {
-  background-color: rgb(236, 219, 219);
+.status-stop {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100%;
+  background-color: red;
+  border: none;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+
+.status-active {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100%;
+  background-color: yellowgreen;
+  border: none;
+  margin-right: 0.3rem;
+  cursor: pointer;
 }

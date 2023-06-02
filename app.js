@@ -1,4 +1,5 @@
 import { settingHabit } from "./src/settingHabit.js";
+import { toggleStatus } from "./src/renderHabitCalendar.js";
 import {
   goToHabitView,
   goToStartView,
@@ -26,3 +27,20 @@ backBtns.forEach((btn) => {
 
 setHabitBtn.addEventListener("click", goToSetHabit);
 addBtn.addEventListener("click", goToHabitView);
+
+if (habitView) {
+  habitView.addEventListener("click", (event) => {
+    if (event.target.classList.contains("days__day--status")) {
+      event.target.classList.remove("days__day--status");
+      event.target.classList.add("status-active");
+    } else if (event.target.classList.contains("status-active")) {
+      event.target.classList.remove("status-active");
+      event.target.classList.add("status-stop");
+    } else if (event.target.classList.contains("status-stop")) {
+      event.target.classList.remove("status-stop");
+      event.target.classList.add("days__day--status");
+    }
+  });
+}
+
+// toggleStatus();
