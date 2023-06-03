@@ -3,6 +3,7 @@ import { habitView } from "../app.js";
 const habitTitleInput = document.querySelector(".title-input");
 const habitStartDateInput = document.querySelector(".date-input");
 const habitDaysAmountInput = document.querySelector(".days-amount-input");
+const habitsToChooseBox = document.querySelector(".start-view__habitsToChoose");
 
 const date = new Date();
 const currYear = date.getFullYear();
@@ -69,10 +70,8 @@ export const renderHabitContainer = () => {
   habitView.insertAdjacentHTML("afterbegin", html);
 
   const habitObject = createHabitObject();
-
-  console.log(habitObject);
   habitsArray.push(habitObject);
-  console.log(habitsArray);
+  pushHabitToChooseBtn();
 };
 
 export const renderHabitCalendar = () => {
@@ -104,4 +103,11 @@ const createHabitObject = () => {
     startData: habitStartDateInput.value,
     numberOfDays: habitDaysAmountInput.value,
   };
+};
+
+const pushHabitToChooseBtn = () => {
+  const lastIndex = habitsArray.length - 1;
+  const newHabitBtn = document.createElement("button");
+  newHabitBtn.textContent = habitsArray[lastIndex].title;
+  habitsToChooseBox.appendChild(newHabitBtn);
 };
