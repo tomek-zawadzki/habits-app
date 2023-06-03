@@ -9,6 +9,8 @@ const currYear = date.getFullYear();
 const currMonth = date.getMonth();
 const lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
 
+let habitsArray = [];
+
 const months = [
   "January",
   "February",
@@ -65,6 +67,12 @@ export const renderHabitContainer = () => {
                </div> 
       `;
   habitView.insertAdjacentHTML("afterbegin", html);
+
+  const habitObject = createHabitObject();
+
+  console.log(habitObject);
+  habitsArray.push(habitObject);
+  console.log(habitsArray);
 };
 
 export const renderHabitCalendar = () => {
@@ -88,4 +96,12 @@ export const renderHabitCalendar = () => {
 
     currentDay.setDate(currentDay.getDate() + 1);
   }
+};
+
+const createHabitObject = () => {
+  return {
+    title: habitTitleInput.value,
+    startData: habitStartDateInput.value,
+    numberOfDays: habitDaysAmountInput.value,
+  };
 };
