@@ -1,9 +1,8 @@
-import { habitView } from "../app.js";
+import { habitView, habitsToChooseBox } from "../app.js";
 
 const habitTitleInput = document.querySelector(".title-input");
 const habitStartDateInput = document.querySelector(".date-input");
 const habitDaysAmountInput = document.querySelector(".days-amount-input");
-const habitsToChooseBox = document.querySelector(".start-view__habitsToChoose");
 
 const date = new Date();
 const currYear = date.getFullYear();
@@ -108,6 +107,7 @@ const createHabitObject = () => {
 const pushHabitToChooseBtn = () => {
   const lastIndex = habitsArray.length - 1;
   const newHabitBtn = document.createElement("button");
+  newHabitBtn.classList.add("habit-option");
   newHabitBtn.textContent = habitsArray[lastIndex].title;
   habitsToChooseBox.appendChild(newHabitBtn);
 };

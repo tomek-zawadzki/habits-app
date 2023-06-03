@@ -15,6 +15,9 @@ const addBtn = document.querySelector(".add-btn");
 export const habitView = document.querySelector(".week");
 export const settingHabitView = document.querySelector(".setting-habit");
 export const startView = document.querySelector(".start-view");
+export const habitsToChooseBox = document.querySelector(
+  ".start-view__habitsToChoose"
+);
 
 backBtns.forEach((btn) => {
   if (btn.parentElement.classList.contains("setting-habit")) {
@@ -25,6 +28,16 @@ backBtns.forEach((btn) => {
   }
 });
 
+const showHabitOptions = () => {
+  console.log(habitsToChooseBox.children);
+  if (habitsToChooseBox.children.length === 0) {
+    alert("You do not have habits to choose");
+  } else {
+    habitsToChooseBox.style.display = "flex";
+  }
+};
+
 setHabitBtn.addEventListener("click", goToSetHabit);
 addBtn.addEventListener("click", goToHabitView);
+selectBtn.addEventListener("click", showHabitOptions);
 habitView.addEventListener("click", toggleHabitStatus);
