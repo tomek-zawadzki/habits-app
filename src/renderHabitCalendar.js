@@ -37,9 +37,9 @@ const days = [
 ];
 
 export const renderHabitContainer = () => {
-  if (!habitView.firstElementChild.classList.contains("back-btn")) {
-    habitView.firstElementChild.remove();
-  }
+  // if (!habitView.firstElementChild.classList.contains("back-btn")) {
+  //   habitView.firstElementChild.remove();
+  // }
   const html = `
   
               <div class="habit-box">

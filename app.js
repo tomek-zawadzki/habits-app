@@ -23,7 +23,11 @@ backBtns.forEach((btn) => {
     btn.addEventListener("click", () => goToStartView(settingHabitView));
   }
   if (btn.parentElement.classList.contains("habit")) {
-    btn.addEventListener("click", () => goToStartView(habitView));
+    btn.addEventListener("click", () => {
+      goToStartView(habitView);
+      const habitBoxes = document.querySelectorAll(".habit-box");
+      habitBoxes.forEach((box) => box.classList.add("hidden"));
+    });
   }
 });
 
