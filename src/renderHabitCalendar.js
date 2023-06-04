@@ -37,15 +37,20 @@ const days = [
 ];
 
 export const renderHabitContainer = () => {
+  if (!habitView.firstElementChild.classList.contains("back-btn")) {
+    habitView.firstElementChild.remove();
+  }
   const html = `
-              <div class="week__header">
-                <h2 class="week__header--title">${habitTitleInput.value}</h2>
-                <div class="week__header--details">
+  
+              <div class="habit-box">
+              <div class="habit-box__header">
+                <h2 class="habit-box__header--title">${habitTitleInput.value}</h2>
+                <div class="habit-box__header--details">
                 <span>Start date: ${habitStartDateInput.value}</span>
                 <span>Number of days: ${habitDaysAmountInput.value}</span>
                 </div>
                 </div>
-                <div class="week__container">
+                <div class="habit-box__container">
                 <div class="controllers">
                     <div class="controllers__first-line">
                         <button class="controllers__prev-btn">&lt; Previous</button>
@@ -65,6 +70,7 @@ export const renderHabitContainer = () => {
                     </ul>
                     </div>
                </div> 
+               </div>
       `;
   habitView.insertAdjacentHTML("afterbegin", html);
 
