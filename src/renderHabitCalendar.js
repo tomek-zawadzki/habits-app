@@ -1,13 +1,15 @@
 import { habitView, habitsToChooseBox } from "../app.js";
 
-const habitTitleInput = document.querySelector(".title-input");
-const habitStartDateInput = document.querySelector(".date-input");
-const habitDaysAmountInput = document.querySelector(".days-amount-input");
+export const habitTitleInput = document.querySelector(".title-input");
+export const habitStartDateInput = document.querySelector(".date-input");
+export const habitDaysAmountInput =
+  document.querySelector(".days-amount-input");
 
-const date = new Date();
-const currYear = date.getFullYear();
-const currMonth = date.getMonth();
-const lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+// const date = new Date();
+// const currYear = date.getFullYear();
+// const currMonth = date.getMonth();
+// const lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+const currentDate = new Date();
 
 let habitsArray = [];
 
@@ -37,27 +39,21 @@ const days = [
 ];
 
 export const renderHabitContainer = () => {
-  // if (!habitView.firstElementChild.classList.contains("back-btn")) {
-  //   habitView.firstElementChild.remove();
-  // }
   const html = `
-  
               <div class="habit-box">
-              <div class="habit-box__header">
-                <h2 class="habit-box__header--title">${habitTitleInput.value}</h2>
-                <div class="habit-box__header--details">
-                <span>Start date: ${habitStartDateInput.value}</span>
-                <span>Number of days: ${habitDaysAmountInput.value}</span>
-                </div>
-                </div>
+             
                 <div class="habit-box__container">
                 <div class="controllers">
                     <div class="controllers__first-line">
                         <button class="controllers__prev-btn">&lt; Previous</button>
-                        <span class="controllers__month">${months[currMonth]}</span>
+                        <span class="controllers__month">${
+                          months[currentDate.getMonth()]
+                        }</span>
                         <button class="controllers__next-btn">Next &gt;</button>
                     </div>
-                    <span class="controllers__status">0/${habitDaysAmountInput.value}</span>
+                    <span class="controllers__status">0/${
+                      habitDaysAmountInput.value
+                    }</span>
                     </div>
                     <div class="days">
                     <div class="days__info">
@@ -74,6 +70,62 @@ export const renderHabitContainer = () => {
       `;
   habitView.insertAdjacentHTML("afterbegin", html);
 
+  const nextMonthBtn = document.querySelector(".controllers__next-btn");
+
+  // nextMonthBtn.addEventListener("click", () => {
+  //   currentDate.setMonth(currentDate.getMonth() + 1);
+  //   const lastDateofMonth = new Date(
+  //     currentDate.getFullYear(),
+  //     currentDate.getMonth() + 1,
+  //     0
+  //   ).getDate();
+
+  //   console.log(months[currentDate.getMonth()]);
+  //   console.log(months[currentDate.getMonth() + 1]);
+
+  //   const html = `
+  //     <div class="habit-box">
+
+  //     <div class="habit-box__container">
+  //     <div class="controllers">
+  //     <div class="controllers__first-line">
+  //     <button class="controllers__prev-btn">&lt; Previous</button>
+  //     <span class="controllers__month">${months[currentDate.getMonth()]}</span>
+  //     <button class="controllers__next-btn">Next &gt;</button>
+  //     </div>
+  //     <span class="controllers__status">0/${habitDaysAmountInput.value}</span>
+  //     </div>
+  //     <div class="days">
+  //     <div class="days__info">
+  //     <p class="days__info--element">day</p>
+  //     <p class="days__info--element"></p>
+  //     <p class="days__info--element">status</p>
+  //     </div>
+  //     <ul class="days__list">
+
+  //     </ul>
+  //     </div>
+  //     </div>
+  //     </div>
+  //     `;
+  //   habitView.insertAdjacentHTML("afterbegin", html);
+  //   renderHabitCalendar();
+  // });
+};
+
+export const renderHabitHeader = () => {
+  const habitBox = document.querySelector(".habit-box");
+  const html = `
+    <div class="habit-box__header">
+      <h2 class="habit-box__header--title">${habitTitleInput.value}</h2>
+      <div class="habit-box__header--details">
+        <span>Start date: ${habitStartDateInput.value}</span>
+        <span>Number of days: ${habitDaysAmountInput.value}</span>
+      </div>
+    </div>
+`;
+
+  habitBox.insertAdjacentHTML("afterbegin", html);
   const habitObject = createHabitObject();
   habitsArray.push(habitObject);
   pushHabitToChooseBtn();
@@ -83,7 +135,16 @@ export const renderHabitCalendar = () => {
   const daysList = document.querySelector(".days__list");
   if (!daysList) return;
 
-  let currentDay = new Date(currYear, currMonth, 1);
+  let currentDay = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+  );
+  const lastDateofMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+  ).getDate();
 
   for (let i = 1; i <= lastDateofMonth; i++) {
     const dayOfWeek = days[currentDay.getDay()];
@@ -116,4 +177,14 @@ const pushHabitToChooseBtn = () => {
   newHabitBtn.classList.add("habit-option");
   newHabitBtn.textContent = habitsArray[lastIndex].title;
   habitsToChooseBox.appendChild(newHabitBtn);
+};
+
+const settingHabitValidation = () => {
+  if (
+    habitDaysAmountInput.value === "" ||
+    habitStartDateInput.value <= 0 ||
+    habitStartDateInput === ""
+  ) {
+    alert("all fields must be filled");
+  }
 };

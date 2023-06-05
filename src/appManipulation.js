@@ -1,8 +1,10 @@
 import { startView, settingHabitView, habitView } from "../app.js";
+import settingHabitValidation from "./settingHabitValidation.js";
 
 import {
   renderHabitContainer,
   renderHabitCalendar,
+  renderHabitHeader,
 } from "./renderHabitCalendar.js";
 
 export const goToSetHabit = () => {
@@ -20,5 +22,6 @@ export const goToHabitView = () => {
   habitView.style.display = "flex";
 
   renderHabitContainer();
+  renderHabitHeader();
   renderHabitCalendar();
 };

@@ -5,6 +5,7 @@ import {
   goToStartView,
   goToSetHabit,
 } from "./src/appManipulation.js";
+import settingHabitValidation from "./src/settingHabitValidation.js";
 
 const setHabitBtn = document.querySelector(".set-btn");
 const selectBtn = document.querySelector(".select-btn");
@@ -32,6 +33,6 @@ backBtns.forEach((btn) => {
 });
 
 setHabitBtn.addEventListener("click", goToSetHabit);
-addBtn.addEventListener("click", goToHabitView);
+addBtn.addEventListener("click", settingHabitValidation);
 selectBtn.addEventListener("click", showHabitsOptions);
 habitView.addEventListener("click", toggleHabitStatus);
