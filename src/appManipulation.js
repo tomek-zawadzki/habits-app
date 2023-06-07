@@ -1,6 +1,4 @@
 import { startView, settingHabitView, habitView } from "../app.js";
-import settingHabitValidation from "./settingHabitValidation.js";
-
 import {
   renderHabitContainer,
   renderHabitCalendar,
@@ -8,20 +6,22 @@ import {
 } from "./renderHabitCalendar.js";
 
 export const goToSetHabit = () => {
-  startView.style.display = "none";
-  settingHabitView.style.display = "flex";
+  changeView(startView, settingHabitView);
 };
 
-export const goToStartView = (view) => {
-  view.style.display = "none";
-  startView.style.display = "flex";
+export const goToStartView = () => {
+  changeView(settingHabitView, startView);
 };
 
 export const goToHabitView = () => {
-  settingHabitView.style.display = "none";
-  habitView.style.display = "flex";
+  changeView(settingHabitView, habitView);
 
   renderHabitContainer();
   renderHabitHeader();
   renderHabitCalendar();
+};
+
+const changeView = (currentView, goToView) => {
+  currentView.style.display = "none";
+  goToView.style.display = "flex";
 };
