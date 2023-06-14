@@ -1,4 +1,5 @@
 import { habitView, habitsToChooseBox } from "../app.js";
+import toggleHabitStatus from "./toggleHabitStatus.js";
 
 export const habitTitleInput = document.querySelector(".title-input");
 export const habitStartDateInput = document.querySelector(".date-input");
@@ -51,7 +52,7 @@ export const renderHabitContainer = () => {
                         }</span>
                         <button class="controllers__next-btn">Next &gt;</button>
                     </div>
-                    <span class="controllers__status">0/${
+                    <span class="controllers__status"><span class="counted-active-days">0</span>/${
                       habitDaysAmountInput.value
                     }</span>
                     </div>
@@ -70,7 +71,7 @@ export const renderHabitContainer = () => {
       `;
   habitView.insertAdjacentHTML("afterbegin", html);
 
-  const nextMonthBtn = document.querySelector(".controllers__next-btn");
+  // const nextMonthBtn = document.querySelector(".controllers__next-btn");
 
   // nextMonthBtn.addEventListener("click", () => {
   //   currentDate.setMonth(currentDate.getMonth() + 1);
@@ -85,7 +86,6 @@ export const renderHabitContainer = () => {
 
   //   const html = `
   //     <div class="habit-box">
-
   //     <div class="habit-box__container">
   //     <div class="controllers">
   //     <div class="controllers__first-line">
@@ -108,7 +108,7 @@ export const renderHabitContainer = () => {
   //     </div>
   //     </div>
   //     `;
-  //   habitView.insertAdjacentHTML("afterbegin", html);
+  //   habitView.insertAdjacentHTML("beforeend", html);
   //   renderHabitCalendar();
   // });
 };
@@ -177,14 +177,4 @@ const pushHabitToChooseBtn = () => {
   newHabitBtn.classList.add("habit-option");
   newHabitBtn.textContent = habitsArray[lastIndex].title;
   habitsToChooseBox.appendChild(newHabitBtn);
-};
-
-const settingHabitValidation = () => {
-  if (
-    habitDaysAmountInput.value === "" ||
-    habitStartDateInput.value <= 0 ||
-    habitStartDateInput === ""
-  ) {
-    alert("all fields must be filled");
-  }
 };

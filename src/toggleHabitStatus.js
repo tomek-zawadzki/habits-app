@@ -1,3 +1,5 @@
+import countActiveDays from "./countActiveDays.js";
+
 const toggleHabitStatus = (event) => {
   const { target } = event;
   if (target.classList.contains("days__day--status")) {
@@ -7,6 +9,8 @@ const toggleHabitStatus = (event) => {
   } else if (target.classList.contains("status-stop")) {
     toggleClass(target, "days__day--status", "status-stop");
   }
+
+  countActiveDays();
 };
 
 const toggleClass = (element, addClass, removeClass) => {
